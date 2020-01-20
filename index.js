@@ -241,8 +241,17 @@ function getOlderCars(arr, maxYear) {
  * in the same order as they appear in the original inventory.
 */
 function getGermanCars(arr) {
-  let germanCars = [`Audi`,`Mercedes-Benz`,`Volkswagen`,`BMW`]
-  return arr.filter(car => germanCars.includes(car.car_make))
+  const germanCars = [`Audi`,`Mercedes-Benz`,`Volkswagen`,`BMW`]
+  const germanInventoryArr = []
+  for (let i = 0; i < arr.length; i++) {
+    if (germanCars.includes(arr[i].car_make)) {
+      germanInventoryArr.push(arr[i])
+    }
+  }
+  return germanInventoryArr
+
+  // solution with .filter
+  // return arr.filter(car => germanCars.includes(car.car_make))
 }
 
 /**
